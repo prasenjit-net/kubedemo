@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: app
+          uri: lb://kube-app/
+          predicates:
+            - Path=/api/**
+          filters:
+            - StripPrefix=1
