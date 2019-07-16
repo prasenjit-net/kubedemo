@@ -17,7 +17,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
         ports = @Port(name = "http", containerPort = 8080),
         livenessProbe = @Probe(httpActionPath = "/actuator/health"),
         readinessProbe = @Probe(httpActionPath = "/actuator/health"),
-        imagePullPolicy = ImagePullPolicy.Always
+        imagePullPolicy = ImagePullPolicy.Always,
+        replicas = 3
 )
 public class KubeAppApplication {
 
